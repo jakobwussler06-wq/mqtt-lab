@@ -9,7 +9,7 @@
 #include <string.h>
 #include <mosquitto.h>
 
-#define BROKER  "test.mosquitto.org"
+#define BROKER  "localhost"
 #define PORT    1883
 #define TOPIC   "mqtt-lab/test/sensor"
 
@@ -51,7 +51,7 @@ static void on_disconnect(struct mosquitto *mosq, void *userdata, int rc) {
     }
 }
 
-int main(void) {
+int main(void) { 
     mosquitto_lib_init();
 
     struct mosquitto *mosq = mosquitto_new("mqtt-lab-subscriber", true, NULL);
